@@ -1,0 +1,3 @@
+config.inc.php
+tmp/
+!tmp/.gitignore

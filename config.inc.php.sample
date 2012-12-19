@@ -1,0 +1,16 @@
+<?php
+
+class DF_Config
+{
+    public static $servers = array(
+        array('https://beispielserver1.de/', 'benutzername', 'kennwort'),
+        array('https://beispielserver2.de/', 'benutzername', 'kennwort'),
+    );
+
+    /* PHP-Pfad */
+    public static $php = '/usr/local/bin/php';
+
+    /* php.ini-Pfad */
+    public static $ini = '/etc/php.ini';
+
+}

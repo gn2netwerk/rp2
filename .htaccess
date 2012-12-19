@@ -1,0 +1,9 @@
+AuthType Basic
+AuthName "Ganz geheime Zone"
+AuthUserFile /dev/null
+Require valid-user
+Order deny,allow
+Deny from all
+Allow from 0.0.0.0 
+Satisfy any
+
