@@ -8,9 +8,9 @@ class DF_Config
     );
 
     /* PHP-Pfad */
-    public static $php = '/usr/local/bin/php';
+    public static $php = '/usr/local/bin/php5.2.17-cli';
 
     /* php.ini-Pfad */
-    public static $ini = '/etc/php.ini';
+    public static $ini = '/etc/php.ini/5/90xxx1/php.ini';
 
 }

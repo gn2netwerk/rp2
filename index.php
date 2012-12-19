@@ -38,7 +38,7 @@ if ($q) {
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>DF API</title>
+        <title>DF API - <?php echo htmlentities($q, ENT_QUOTES, 'UTF-8'); ?></title>
         <script>var resultPrefix = "<?php echo $tmpPrefix; ?>";</script>
         <script src="jquery.min.js"></script>
         <script src="init.js"></script>
