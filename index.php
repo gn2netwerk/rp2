@@ -24,11 +24,21 @@ if ($a && $prefix) {
 
 /* Search Mode */
 if ($q) {
+    
+    /* Clear /tmp */
+    $now = time();
+    foreach (glob('tmp/*') as $file) {
+        if ($now - filemtime($file) > 60) {
+            unlink($file);
+        }
+    }
+
+
     $tmpPrefix = substr(sha1(date('YmdHis').rand()), 0, 6);
     
     foreach (DF_Config::$servers as $server) {
         $cmd = "nohup ".DF_Config::$php." -c ".DF_Config::$ini
-                ." api.php $server[0] $server[1] $server[2] ".escapeshellcmd($q)
+                ." api.php $server[0] $server[1] $server[2] ".escapeshellarg($q)
                 ." $tmpPrefix > /dev/null 2> /dev/null < /dev/null &";
         system($cmd);
     }
