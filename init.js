@@ -26,7 +26,7 @@ jQuery(document).ready(function(){
                         }
                         var domainResult = jQuery('<div class="result"></div>');
                         domainResult.append('<div class="server"><a href="'+domain.server+'">'+domain.server+'</a></div>');
-                        domainResult.append('<div class="domain">'+domain.domain+'</div>');
+                        domainResult.append('<div class="domain">'+domain.domain+'<form action="'+domain.server+'" method="post"><input type="hidden" value="auth" name="_login[action]"><input type="hidden" name="_login[user]" value="'+domain.user+':'+domain.domain+'"><input type="hidden" name="_login[pass]" value="'+domain.pass+'"><input type="submit" value="anmelden"></form></div>');
                         domains.append(domainResult);
                     });
                 }
@@ -38,7 +38,7 @@ jQuery(document).ready(function(){
                         }
                         var customerResult = jQuery('<div class="result"></div>');
                         customerResult.append('<div class="server"><a href="'+customer.server+'">'+customer.server+'</a></div>');
-                        customerResult.append('<div class="customer">'+customer.title+' '+customer.first_name+' '+customer.last_name+'<br>'+customer.zip+' '+customer.city+'<br>Customer: '+customer.comment+'</div>');
+                        customerResult.append('<div class="customer">'+customer.title+' '+customer.first_name+' '+customer.last_name+'<br>'+customer.zip+' '+customer.city+'<br>Comment: '+customer.comment+'</div>');
                         customers.append(customerResult);
                     });
                 }

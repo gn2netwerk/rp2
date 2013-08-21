@@ -25,7 +25,9 @@ if ($argv[1] && $argv[2] && $argv[3] && $argv[4]) {
         foreach ($rDomains as $result) {
             $response['domains'][] = array(
                 'domain' => $result['name'],
-                'server' => $argv[1]
+                'server' => $argv[1],
+                'user'   => $argv[2],
+                'pass'   => $argv[3]
             );
         }
     }      
@@ -50,8 +52,13 @@ if ($argv[1] && $argv[2] && $argv[3] && $argv[4]) {
         $response['customers'] = array();
         foreach ($rCustomers as $result) {
             $cResult = $result;
-            $cResult['server'] = $argv[1];
 
+            $fieldStr = '';
+            foreach ($result as $k=>$v) {
+                $fieldStr.="<strong>".$k."</strong> : ".$v."<br>";
+            }
+            $cResult['server'] = $argv[1];
+            $cResult['fields'] = $fieldStr;
             $response['customers'][] = $cResult;
         }
     }          

@@ -1,9 +1,10 @@
 AuthType Basic
 AuthName "Ganz geheime Zone"
-AuthUserFile /dev/null
+AuthUserFile /blah/blah/blah
 Require valid-user
 Order deny,allow
 Deny from all
-Allow from 0.0.0.0 
+Allow from 92.79.12.242
+Allow from 188.93.8.46
 Satisfy any
-
+AddType application/x-httpd-php5 .php 
